@@ -57,21 +57,114 @@ const COURSES = {
     title: 'AI Literacy for Insurance',
     description: 'Master AI applications in underwriting, claims processing, and risk assessment',
     color: 'from-emerald-600 to-teal-600',
-    icon: Shield
+    icon: Shield,
+    sections: [
+      {
+        id: 'what-is-ai',
+        title: 'WHAT IS Artificial Intelligence?',
+        lessons: [
+          { id: 'ai-what-is-it', title: 'AI - What Is It?', type: 'lesson' },
+          { id: 'types-of-ai', title: 'What Are the Different Types of AI?', type: 'lesson' },
+          { id: 'how-ai-learns', title: 'How AI Learns', type: 'lesson' },
+          { id: 'generative-ai', title: 'Generative AI', type: 'lesson' },
+          { id: 'agentic-ai', title: 'Agentic AI', type: 'lesson' },
+          { id: 'knowledge-check-1', title: 'Knowledge Check', type: 'quiz' }
+        ]
+      },
+      {
+        id: 'risks-ethics',
+        title: 'RISKS AND ETHICS OF AI',
+        lessons: [
+          { id: 'risks-rewards', title: 'The Risks and Rewards of AI', type: 'lesson' },
+          { id: 'insurance-bias', title: 'Bias and Fairness in Insurance AI', type: 'lesson' },
+          { id: 'regulatory', title: 'Insurance Regulatory Landscape', type: 'lesson' },
+          { id: 'knowledge-check-2', title: 'Knowledge Check', type: 'quiz' }
+        ]
+      },
+      {
+        id: 'conclusion',
+        title: 'CONCLUSION',
+        lessons: [
+          { id: 'final-thoughts', title: 'Final Thoughts', type: 'lesson' }
+        ]
+      }
+    ]
   },
   genai: {
     id: 'genai',
     title: 'Generative AI Literacy',
     description: 'Harness generative AI tools for business innovation and productivity',
     color: 'from-pink-600 to-rose-600',
-    icon: Sparkles
+    icon: Sparkles,
+    sections: [
+      {
+        id: 'what-is-ai',
+        title: 'UNDERSTANDING GENERATIVE AI',
+        lessons: [
+          { id: 'ai-what-is-it', title: 'AI - What Is It?', type: 'lesson' },
+          { id: 'types-of-ai', title: 'What Are the Different Types of AI?', type: 'lesson' },
+          { id: 'how-ai-learns', title: 'How AI Learns', type: 'lesson' },
+           { id: 'generative-ai', title: 'Generative AI Deep Dive', type: 'lesson' },
+          { id: 'agentic-ai', title: 'Agentic AI', type: 'lesson' },
+          { id: 'knowledge-check-1', title: 'Knowledge Check', type: 'quiz' }
+        ]
+      },
+      {
+        id: 'practical-applications',
+        title: 'PRACTICAL APPLICATIONS',
+        lessons: [
+          { id: 'prompt-engineering', title: 'Effective Prompt Engineering', type: 'lesson' },
+          { id: 'business-use-cases', title: 'Business Use Cases', type: 'lesson' },
+          { id: 'ethical-use', title: 'Ethical and Responsible Use', type: 'lesson' },
+          { id: 'knowledge-check-2', title: 'Knowledge Check', type: 'quiz' }
+        ]
+      },
+      {
+        id: 'conclusion',
+        title: 'CONCLUSION',
+        lessons: [
+          { id: 'final-thoughts', title: 'Final Thoughts', type: 'lesson' }
+        ]
+      }
+    ]
   },
   healthcare: {
     id: 'healthcare',
     title: 'AI Literacy in Healthcare',
     description: 'Navigate AI in diagnostics, patient care, and medical research',
     color: 'from-blue-600 to-cyan-600',
-    icon: Target
+    icon: Target,
+    sections: [
+      {
+        id: 'what-is-ai',
+        title: 'WHAT IS Artificial Intelligence?',
+        lessons: [
+          { id: 'ai-what-is-it', title: 'AI - What Is It?', type: 'lesson' },
+          { id: 'types-of-ai', title: 'What Are the Different Types of AI?', type: 'lesson' },
+          { id: 'how-ai-learns', title: 'How AI Learns', type: 'lesson' },
+          { id: 'generative-ai', title: 'Generative AI', type: 'lesson' },
+          { id: 'agentic-ai', title: 'Agentic AI', type: 'lesson' },
+          { id: 'knowledge-check-1', title: 'Knowledge Check', type: 'quiz' }
+        ]
+      },
+      {
+        id: 'risks-ethics',
+        title: 'SAFETY AND ETHICS IN HEALTHCARE AI',
+        lessons: [
+          { id: 'patient-safety', title: 'Patient Safety Considerations', type: 'lesson' },
+          { id: 'data-privacy', title: 'Data Privacy and HIPAA Compliance', type: 'lesson' },
+          { id: 'clinical-validation', title: 'Clinical Validation of AI Tools', type: 'lesson' },
+          { id: 'knowledge-check-2', title: 'Knowledge Check', type: 'quiz' }
+        ]
+      },
+      {
+        id: 'conclusion',
+        title: 'CONCLUSION',
+        lessons: [
+          { id: 'final-thoughts', title: 'Final Thoughts', type: 'lesson' }
+        ]
+      }
+    ]
   }
 };
 
@@ -248,6 +341,556 @@ const HR_CONTENT = {
   }
 };
 
+const INSURANCE_CONTENT = {
+  'ai-what-is-it': {
+    title: 'AI - What Is It?',
+    sections: [
+      {
+        heading: 'Understanding AI in Insurance Context',
+        content: 'Artificial Intelligence (AI) in insurance refers to systems that can assess risk, detect fraud, automate claims processing, and personalize customer experiences. AI analyzes vast amounts of data to make predictions and decisions that traditionally required human underwriters and adjusters.'
+      },
+      {
+        heading: 'AI as Your Risk Assessment Partner',
+        content: 'When you use AI-powered underwriting platforms that evaluate risk profiles or fraud detection systems that flag suspicious claims, you\'re leveraging AI that learns from historical patterns and real-time data.'
+      },
+      {
+        heading: 'Key Characteristics of AI in Insurance',
+        list: [
+          'Risk Assessment: Analyzing policyholder data to determine accurate premiums',
+          'Fraud Detection: Identifying suspicious patterns in claims submissions',
+          'Claims Automation: Processing straightforward claims instantly',
+          'Customer Service: Chatbots handling policy queries 24/7'
+        ]
+      },
+      {
+        content: 'For insurance professionals, AI literacy means understanding how these tools work, when to trust their outputs, and how to ensure they operate fairly and compliantly.'
+      }
+    ]
+  },
+  'types-of-ai': {
+    title: 'What Are the Different Types of AI?',
+    sections: [
+      {
+        content: 'Different AI types serve specific insurance functions:'
+      },
+      {
+        heading: 'Narrow AI (Weak AI)',
+        content: 'The AI currently used in insurance operations:',
+        list: [
+          'Underwriting engines that price policies based on risk factors',
+          'Claims triage systems that route claims to appropriate handlers',
+          'Chatbots answering policy coverage questions'
+        ]
+      },
+      {
+        heading: 'Machine Learning',
+        content: 'AI that learns from data to improve predictions:',
+        list: [
+          'Predictive modeling for claim likelihood and severity',
+          'Fraud detection systems learning new fraud patterns',
+          'Customer churn prediction models',
+          'Telematics analyzing driving behavior for auto insurance'
+        ]
+      },
+      {
+        heading: 'Deep Learning',
+        content: 'Advanced neural networks for complex analysis:',
+        list: [
+          'Image recognition for damage assessment in property claims',
+          'Natural language processing for claim document analysis',
+          'Voice analysis for call center quality and fraud detection'
+        ]
+      },
+      {
+        content: 'Most insurance AI applications fall into Narrow AI and Machine Learning categories, designed for specific risk assessment and operational tasks.'
+      }
+    ]
+  },
+  'how-ai-learns': {
+    title: 'How AI Learns',
+    sections: [
+      {
+        content: 'Understanding AI learning methods is crucial for insurance professionals:'
+      },
+      {
+        heading: 'Supervised Learning',
+        content: 'AI learns from labeled historical data:',
+        list: [
+          'Training: Feed AI 100,000 past claims labeled "fraudulent" or "legitimate"',
+          'Application: System learns to flag suspicious new claims',
+          'Insurance Use: Fraud detection, risk scoring, claim cost prediction'
+        ]
+      },
+      {
+        heading: 'Unsupervised Learning',
+        content: 'AI discovers hidden patterns without labels:',
+        list: [
+          'Training: Analyze customer data without predetermined categories',
+          'Application: System identifies natural customer segments or anomalies',
+          'Insurance Use: Market segmentation, emerging fraud pattern detection'
+        ]
+      },
+      {
+        heading: 'Reinforcement Learning',
+        content: 'AI learns through trial and optimization:',
+        list: [
+          'Training: System tests different pricing strategies and learns from outcomes',
+          'Application: Optimizes decisions based on profitability and retention',
+          'Insurance Use: Dynamic pricing, claims routing optimization'
+        ]
+      },
+      {
+        heading: 'The Insurance Implication',
+        content: 'Biased training data leads to discriminatory pricing or unfair claim denials. Always validate that historical data doesn\'t encode illegal discrimination (redlining, age bias, etc.) before training AI models.'
+      }
+    ]
+  },
+  'generative-ai': {
+    title: 'Generative AI',
+    sections: [
+      {
+        content: 'Generative AI creates new content and is transforming insurance operations and customer service.'
+      },
+      {
+        heading: 'What It Does in Insurance',
+        list: [
+          'Generates personalized policy explanation documents',
+          'Creates claim summaries from adjuster notes and photos',
+          'Drafts customer communications about coverage changes',
+          'Produces underwriting reports synthesizing multiple data sources',
+          'Generates training scenarios for new underwriters and adjusters'
+        ]
+      },
+      {
+        heading: 'Popular Tools in Insurance',
+        list: [
+          'ChatGPT/Claude: Draft policy communications, summarize complex claims',
+          'Document generators: Create policy documents and endorsements',
+          'Email composers: Personalize customer outreach at scale',
+          'Report writers: Synthesize claim investigation findings'
+        ]
+      },
+      {
+        heading: 'Insurance-Specific Applications',
+        content: 'Underwriting: Generate risk assessment reports combining multiple data sources. Claims: Create detailed claim summaries from photos, reports, and statements. Customer Service: Draft personalized responses to complex policy questions. Compliance: Generate required regulatory documentation and disclosures.'
+      },
+      {
+        heading: 'Critical Consideration',
+        content: 'Always verify AI-generated policy language and coverage determinations for accuracy. Errors in generated documents can create unintended coverage obligations or regulatory violations.'
+      }
+    ]
+  },
+  'agentic-ai': {
+    title: 'Agentic AI',
+    sections: [
+      {
+        content: 'Agentic AI represents autonomous systems that can execute complex insurance workflows with minimal human intervention.'
+      },
+      {
+        heading: 'What Makes It "Agentic"',
+        list: [
+          'Takes initiative to gather needed information',
+          'Makes multi-step decisions across systems',
+          'Adapts approach based on case complexity',
+          'Coordinates between multiple tools and databases'
+        ]
+      },
+      {
+        heading: 'Emerging Insurance Applications',
+        content: 'Intelligent Claims Agents: Intake claim, request documentation, assess damage via photos, determine coverage, calculate payout, send settlement. Underwriting Agents: Gather applicant data, run background checks, assess risk factors, determine pricing, generate policy. Customer Service Agents: Answer complex multi-policy questions, process policy changes, handle billing issues autonomously.'
+      },
+      {
+        heading: 'The Insurance Professional\'s Role',
+        content: 'As agentic AI evolves, insurance professionals will focus on: handling complex exceptions requiring judgment, reviewing AI decisions for bias and fairness, managing customer relationships, and ensuring regulatory compliance.'
+      },
+      {
+        heading: 'Current Reality',
+        content: 'True agentic AI in insurance is still emerging. Most "automated" systems still require human checkpoints for complex decisions and regulatory reasons.'
+      }
+    ]
+  }
+};
+
+const GENAI_CONTENT = {
+  'ai-what-is-it': {
+    title: 'AI - What Is It?',
+    sections: [
+      {
+        heading: 'Understanding Generative AI',
+        content: 'Generative AI refers to artificial intelligence systems that can create new content—text, images, code, audio, video—based on patterns learned from existing data. Unlike traditional AI that classifies or predicts, generative AI produces original outputs.'
+      },
+      {
+        heading: 'How It Differs from Other AI',
+        content: 'Traditional AI: "Is this email spam?" (classification). Generative AI: "Write a professional email response" (creation). Traditional AI analyzes and categorizes; generative AI synthesizes and produces.'
+      },
+      {
+        heading: 'Key Capabilities',
+        list: [
+          'Text Generation: Writing articles, code, emails, reports',
+          'Image Creation: Generating visuals from text descriptions',
+          'Code Writing: Producing functional software from requirements',
+          'Audio/Video: Creating synthetic voices and video content',
+          'Translation: Converting between formats and languages'
+        ]
+      },
+      {
+        content: 'Understanding generative AI means knowing both its creative power and its limitations—it produces convincing content but doesn\'t truly "understand" like humans do.'
+      }
+    ]
+  },
+  'types-of-ai': {
+    title: 'What Are the Different Types of AI?',
+    sections: [
+      {
+        content: 'Generative AI encompasses various technologies, each with distinct capabilities:'
+      },
+      {
+        heading: 'Large Language Models (LLMs)',
+        content: 'Text-based AI trained on vast text datasets:',
+        list: [
+          'Examples: GPT-4, Claude, Gemini, LLaMA',
+          'Applications: Writing, analysis, coding, conversation',
+          'Strengths: Versatile, natural language understanding',
+          'Limitations: Can hallucinate facts, knowledge cutoff dates'
+        ]
+      },
+      {
+        heading: 'Image Generation Models',
+        content: 'AI that creates visuals from text prompts:',
+        list: [
+          'Examples: DALL-E, Midjourney, Stable Diffusion',
+          'Applications: Marketing visuals, product mockups, concept art',
+          'Strengths: Rapid prototyping, creative exploration',
+          'Limitations: Inconsistent results, copyright concerns'
+        ]
+      },
+      {
+        heading: 'Multimodal Models',
+        content: 'AI that works across text, images, and other formats:',
+        list: [
+          'Examples: GPT-4V, Gemini Pro Vision',
+          'Applications: Document analysis, visual Q&A, accessibility tools',
+          'Strengths: Unified interface for multiple content types'
+        ]
+      },
+      {
+        heading: 'Code Generation Models',
+        content: 'Specialized AI for software development:',
+        list: [
+          'Examples: GitHub Copilot, Amazon CodeWhisperer',
+          'Applications: Code completion, bug fixing, test generation'
+        ]
+      }
+    ]
+  },
+  'how-ai-learns': {
+    title: 'How AI Learns',
+    sections: [
+      {
+        content: 'Generative AI learns through sophisticated training processes:'
+      },
+      {
+        heading: 'Pre-training: Learning from Massive Data',
+        content: 'The foundation of generative AI:',
+        list: [
+          'Process: Models ingest billions of text documents, images, or code samples',
+          'Learning: AI identifies patterns, relationships, and structures',
+          'Result: Broad knowledge base and general capabilities',
+          'Example: GPT models trained on large portions of the internet'
+        ]
+      },
+      {
+        heading: 'Fine-tuning: Specialization',
+        content: 'Adapting to specific tasks:',
+        list: [
+          'Process: Further training on domain-specific data',
+          'Learning: Optimizes for particular use cases or styles',
+          'Result: Enhanced performance on targeted applications',
+          'Example: Medical AI fine-tuned on clinical literature'
+        ]
+      },
+      {
+        heading: 'Reinforcement Learning from Human Feedback (RLHF)',
+        content: 'Aligning AI with human preferences:',
+        list: [
+          'Process: Humans rate AI outputs as helpful, accurate, safe',
+          'Learning: Model adjusts to produce preferred responses',
+          'Result: More useful, harmless, and honest AI',
+          'Why it matters: Makes AI safer and more aligned with values'
+        ]
+      },
+      {
+        heading: 'The Quality Principle',
+        content: 'Generative AI quality depends on training data quality. Biased, inaccurate, or outdated training data produces flawed outputs. Always verify critical information.'
+      }
+    ]
+  },
+  'generative-ai': {
+    title: 'Generative AI',
+    sections: [
+      {
+        content: 'Deep dive into practical applications of generative AI across business functions.'
+      },
+      {
+        heading: 'Content Creation',
+        list: [
+          'Marketing: Generate ad copy, social media posts, campaign ideas',
+          'Documentation: Create user guides, FAQs, technical documentation',
+          'Communication: Draft emails, reports, presentations',
+          'Creative: Produce blog posts, scripts, brainstorm concepts'
+        ]
+      },
+      {
+        heading: 'Analysis and Research',
+        list: [
+          'Summarization: Condense long documents into key points',
+          'Data analysis: Generate insights from datasets',
+          'Research: Synthesize information from multiple sources',
+          'Competitive intelligence: Analyze market trends'
+        ]
+      },
+      {
+        heading: 'Software Development',
+        list: [
+          'Code generation: Write functions, classes, entire modules',
+          'Debugging: Identify and fix code errors',
+          'Documentation: Generate code comments and API docs',
+          'Testing: Create test cases and test data'
+        ]
+      },
+      {
+        heading: 'Customer Experience',
+        list: [
+          'Chatbots: Provide 24/7 customer support',
+          'Personalization: Tailor content to individual preferences',
+          'Translation: Communicate across languages',
+          'Accessibility: Generate alt text, transcriptions, summaries'
+        ]
+      },
+      {
+        heading: 'Best Practices',
+        content: 'Use specific prompts for better results. Always review and edit AI outputs. Verify facts and citations. Consider ethical implications. Respect copyright and attribution.'
+      }
+    ]
+  },
+  'agentic-ai': {
+    title: 'Agentic AI',
+    sections: [
+      {
+        content: 'Agentic AI represents the evolution from passive tools to autonomous digital workers that plan and execute complex tasks.'
+      },
+      {
+        heading: 'From Tool to Agent',
+        list: [
+          'Traditional AI: You ask, it answers once',
+          'Agentic AI: You set a goal, it plans and executes multiple steps',
+          'Example: Instead of "write an email," you say "research this company and draft a personalized outreach email"'
+        ]
+      },
+      {
+        heading: 'Key Capabilities',
+        list: [
+          'Planning: Breaking complex goals into actionable steps',
+          'Tool Use: Accessing APIs, databases, search engines',
+          'Memory: Maintaining context across long interactions',
+          'Reflection: Evaluating its own outputs and iterating'
+        ]
+      },
+      {
+        heading: 'Emerging Applications',
+        content: 'Research Agents: Gather information from multiple sources, synthesize findings, produce comprehensive reports. Coding Agents: Understand requirements, write code, test, debug, and deploy. Business Agents: Analyze market data, generate strategies, create implementation plans. Personal Assistants: Manage calendars, email, tasks across multiple platforms.'
+      },
+      {
+        heading: 'The Future of Work',
+        content: 'Agentic AI will augment human capabilities by handling routine multi-step tasks, allowing professionals to focus on strategy, creativity, and relationship-building. The key skill: knowing how to delegate effectively to AI agents.'
+      },
+      {
+        heading: 'Current Limitations',
+        content: 'Still requires human oversight for critical decisions. Can make mistakes when encountering novel situations. May lack nuanced understanding of context. Requires careful goal specification to avoid unintended actions.'
+      }
+    ]
+  }
+};
+
+const HEALTHCARE_CONTENT = {
+  'ai-what-is-it': {
+    title: 'AI - What Is It?',
+    sections: [
+      {
+        heading: 'Understanding AI in Healthcare Context',
+        content: 'Artificial Intelligence in healthcare refers to systems that can analyze medical images, predict patient outcomes, assist in diagnosis, personalize treatment plans, and streamline administrative tasks. AI processes vast amounts of clinical data to support medical decision-making.'
+      },
+      {
+        heading: 'AI as Your Clinical Decision Support',
+        content: 'When radiologists use AI to detect anomalies in scans, or when EHR systems flag potential drug interactions, they\'re leveraging AI that learns from millions of medical cases and clinical studies.'
+      },
+      {
+        heading: 'Key Characteristics of AI in Healthcare',
+        list: [
+          'Diagnostic Support: Analyzing medical images and lab results',
+          'Predictive Analytics: Forecasting patient deterioration or readmission risk',
+          'Personalized Medicine: Tailoring treatments based on patient data',
+          'Administrative Automation: Handling scheduling, coding, documentation'
+        ]
+      },
+      {
+        content: 'For healthcare professionals, AI literacy means understanding these tools\' capabilities and limitations, maintaining clinical judgment, and ensuring patient safety and privacy.'
+      }
+    ]
+  },
+  'types-of-ai': {
+    title: 'What Are the Different Types of AI?',
+    sections: [
+      {
+        content: 'Different AI types serve specific healthcare functions:'
+      },
+      {
+        heading: 'Narrow AI (Weak AI)',
+        content: 'Task-specific AI used in current healthcare:',
+        list: [
+          'Medical imaging analysis (X-rays, MRIs, CT scans)',
+          'Clinical decision support systems',
+          'Appointment scheduling and patient triage chatbots',
+          'Medical coding and billing automation'
+        ]
+      },
+      {
+        heading: 'Machine Learning',
+        content: 'AI that learns from clinical data:',
+        list: [
+          'Predictive models for disease progression',
+          'Risk stratification for patient populations',
+          'Drug discovery and development',
+          'Epidemic outbreak prediction'
+        ]
+      },
+      {
+        heading: 'Deep Learning',
+        content: 'Advanced neural networks for complex medical analysis:',
+        list: [
+          'Radiology image interpretation (detecting tumors, fractures)',
+          'Pathology slide analysis',
+          'Genomic analysis for precision medicine',
+          'Natural language processing of clinical notes'
+        ]
+      },
+      {
+        heading: 'Clinical Application',
+        content: 'Most healthcare AI currently deployed falls into Narrow AI and Machine Learning, focused on augmenting clinical workflows rather than replacing physician judgment.'
+      }
+    ]
+  },
+  'how-ai-learns': {
+    title: 'How AI Learns',
+    sections: [
+      {
+        content: 'Understanding AI learning is critical for evaluating clinical AI tools:'
+      },
+      {
+        heading: 'Supervised Learning',
+        content: 'AI learns from labeled medical data:',
+        list: [
+          'Training: Feed AI 100,000 chest X-rays labeled with diagnoses',
+          'Application: System learns to identify pneumonia, fractures, tumors',
+          'Healthcare Use: Disease detection, image interpretation, diagnosis support',
+          'Quality Factor: Requires expert-labeled data from diverse patient populations'
+        ]
+      },
+      {
+        heading: 'Unsupervised Learning',
+        content: 'AI discovers patterns in unlabeled data:',
+        list: [
+          'Training: Analyze patient data without predetermined diagnoses',
+          'Application: Identifies patient subtypes or disease clusters',
+          'Healthcare Use: Disease subtyping, patient stratification, novel pattern discovery',
+          'Research Value: Can reveal previously unknown disease relationships'
+        ]
+      },
+      {
+        heading: 'Reinforcement Learning',
+        content: 'AI learns optimal strategies through outcomes:',
+        list: [
+          'Training: System tests treatment strategies and learns from results',
+          'Application: Optimizes treatment protocols and dosing',
+          'Healthcare Use: Treatment planning, resource allocation, ICU management'
+        ]
+      },
+      {
+        heading: 'The Healthcare Imperative',
+        content: 'Training data must represent diverse patient populations. AI trained primarily on data from one demographic can perform poorly or dangerously on others. Always validate AI tools across your patient population.'
+      }
+    ]
+  },
+  'generative-ai': {
+    title: 'Generative AI',
+    sections: [
+      {
+        content: 'Generative AI is transforming healthcare documentation, patient communication, and medical education.'
+      },
+      {
+        heading: 'What It Does in Healthcare',
+        list: [
+          'Generates clinical documentation from voice dictation',
+          'Creates patient education materials at appropriate literacy levels',
+          'Drafts discharge summaries and referral letters',
+          'Produces personalized care instructions',
+          'Generates medical training scenarios and case studies'
+        ]
+      },
+      {
+        heading: 'Clinical Applications',
+        content: 'Documentation: Convert physician-patient conversations into structured notes. Patient Communication: Generate easy-to-understand explanations of conditions and treatments. Care Coordination: Draft referral letters synthesizing complex medical histories. Medical Education: Create realistic case studies and simulation scenarios.'
+      },
+      {
+        heading: 'Popular Tools in Healthcare',
+        list: [
+          'Medical scribes: Ambient documentation from patient encounters',
+          'Patient portals: Generate personalized health summaries',
+          'EHR assistants: Draft notes, orders, and documentation',
+          'Education tools: Create patient handouts and training materials'
+        ]
+      },
+      {
+        heading: 'Critical Safety Considerations',
+        content: 'NEVER rely solely on AI for clinical decisions. Always verify AI-generated medical content for accuracy. Ensure patient privacy—don\'t input PHI into public AI tools. Review all documentation for clinical accuracy before signing. Use AI to augment, never replace, clinical judgment.'
+      }
+    ]
+  },
+  'agentic-ai': {
+    title: 'Agentic AI',
+    sections: [
+      {
+        content: 'Agentic AI in healthcare represents systems that can autonomously coordinate complex care workflows while maintaining appropriate human oversight.'
+      },
+      {
+        heading: 'What Makes Healthcare AI "Agentic"',
+        list: [
+          'Proactively monitors patient data for concerning trends',
+          'Coordinates multi-step care protocols',
+          'Adapts recommendations based on patient response',
+          'Integrates information across multiple systems'
+        ]
+      },
+      {
+        heading: 'Emerging Healthcare Applications',
+        content: 'Care Coordination Agents: Monitor post-discharge patients, detect early warning signs, trigger interventions, coordinate follow-up. Clinical Research Agents: Screen patients for trial eligibility, manage enrollment workflows, track outcomes. Administrative Agents: Handle prior authorizations, verify insurance, schedule appointments. Population Health Agents: Identify at-risk patients, recommend preventive interventions, track outcomes.'
+      },
+      {
+        heading: 'The Clinician\'s Role',
+        content: 'As agentic AI evolves, healthcare professionals will focus on: complex diagnostic reasoning, handling exceptions and complications, building therapeutic relationships, making ethical decisions, and ensuring AI operates safely and appropriately.'
+      },
+      {
+        heading: 'Safety and Oversight',
+        content: 'Healthcare agentic AI requires rigorous safeguards: Clinical validation and FDA clearance where applicable. Human oversight for all clinical decisions. Audit trails for accountability. Regular monitoring for safety issues. Clear escalation protocols for uncertain situations.'
+      },
+      {
+        heading: 'Current Reality',
+        content: 'True agentic AI in healthcare is still limited due to regulatory requirements and patient safety concerns. Most "autonomous" systems still require clinical oversight at key decision points.'
+      }
+    ]
+  }
+};
+
 const QUIZ_1 = {
   questions: [
     {
@@ -292,6 +935,156 @@ const QUIZ_1 = {
       ],
       correct: 1,
       explanation: 'Biased historical data creates biased AI. Always audit and adjust training data to ensure fair outcomes.'
+    }
+  ]
+};
+
+const INSURANCE_QUIZ = {
+  questions: [
+    {
+      id: 'q1',
+      type: 'multiple-choice',
+      question: 'What is the primary risk when using AI trained on historical insurance data?',
+      options: [
+        'The AI will be too slow to process claims',
+        'The AI may perpetuate historical biases like redlining',
+        'The AI will cost too much to implement',
+        'The AI cannot understand complex policies'
+      ],
+      correct: 1,
+      explanation: 'Historical insurance data may contain discriminatory practices. AI trained on this data can perpetuate illegal biases in pricing or coverage decisions.'
+    },
+    {
+      id: 'q2',
+      type: 'scenario',
+      question: 'An AI fraud detection system flags 30% of claims from a specific zip code as suspicious, far above the baseline. What should you do?',
+      options: [
+        'Trust the AI—it must have detected a fraud pattern',
+        'Investigate whether the AI is exhibiting demographic bias',
+        'Increase monitoring in that zip code',
+        'Adjust premiums for that area'
+      ],
+      correct: 1,
+      explanation: 'Disproportionate flagging by geography may indicate bias rather than actual fraud. This requires investigation to ensure fair treatment.'
+    },
+    {
+      id: 'q3',
+      type: 'true-false',
+      question: 'Generative AI can be used to automatically approve insurance claims without human review.',
+      correct: false,
+      explanation: 'While AI can assist in claims processing, regulatory requirements and liability concerns typically require human oversight for claim approvals.'
+    },
+    {
+      id: 'q4',
+      type: 'multiple-choice',
+      question: 'Which AI application is most mature in insurance today?',
+      options: [
+        'Fully autonomous underwriting agents',
+        'Narrow AI for specific tasks like fraud detection',
+        'General AI that handles all insurance functions',
+        'Agentic AI that replaces human adjusters'
+      ],
+      correct: 1,
+      explanation: 'Narrow AI designed for specific tasks like fraud detection and risk scoring is the most widely deployed and mature AI technology in insurance.'
+    }
+  ]
+};
+
+const GENAI_QUIZ = {
+  questions: [
+    {
+      id: 'q1',
+      type: 'multiple-choice',
+      question: 'What is "hallucination" in generative AI?',
+      options: [
+        'When the AI becomes too creative',
+        'When the AI generates false or inaccurate information presented as fact',
+        'When the AI refuses to answer questions',
+        'When the AI produces blurry images'
+      ],
+      correct: 1,
+      explanation: 'Hallucination refers to AI confidently generating false information. Always verify critical facts from AI outputs.'
+    },
+    {
+      id: 'q2',
+      type: 'scenario',
+      question: 'You need to create a market analysis report. How should you use generative AI?',
+      options: [
+        'Copy the AI output directly into your report',
+        'Use AI to generate a draft, then verify facts and add your analysis',
+        'Avoid AI entirely for professional work',
+        'Use AI only for formatting, not content'
+      ],
+      correct: 1,
+      explanation: 'AI is most effective as a drafting tool. Always verify facts, add human judgment, and ensure accuracy before using AI-generated content professionally.'
+    },
+    {
+      id: 'q3',
+      type: 'true-false',
+      question: 'Generative AI can replace human creativity and strategic thinking.',
+      correct: false,
+      explanation: 'Generative AI augments creativity but doesn\'t replace human strategic thinking, nuanced judgment, or original insight.'
+    },
+    {
+      id: 'q4',
+      type: 'matching',
+      question: 'Match the generative AI type to its primary output:',
+      pairs: [
+        { left: 'Large Language Models', right: 'Text and code generation' },
+        { left: 'Image Generation Models', right: 'Visual content from descriptions' },
+        { left: 'Multimodal Models', right: 'Combined text, image, and analysis' }
+      ]
+    }
+  ]
+};
+
+const HEALTHCARE_QUIZ = {
+  questions: [
+    {
+      id: 'q1',
+      type: 'multiple-choice',
+      question: 'What is the most critical consideration when using AI diagnostic tools?',
+      options: [
+        'Speed of diagnosis',
+        'Cost savings',
+        'AI should augment, not replace, clinical judgment',
+        'Patient satisfaction scores'
+      ],
+      correct: 2,
+      explanation: 'Patient safety requires that AI serves as decision support, not a replacement for physician expertise and judgment.'
+    },
+    {
+      id: 'q2',
+      type: 'scenario',
+      question: 'An AI radiology tool shows 98% accuracy on the training dataset. What should you verify before clinical use?',
+      options: [
+        'That it costs less than hiring a radiologist',
+        'That it performs equally well across diverse patient populations',
+        'That it can process images faster than humans',
+        'That the vendor has good marketing materials'
+      ],
+      correct: 1,
+      explanation: 'Training dataset performance doesn\'t guarantee real-world performance, especially across diverse populations. Validation across your patient demographics is essential.'
+    },
+    {
+      id: 'q3',
+      type: 'true-false',
+      question: 'It is safe to input patient protected health information (PHI) into public generative AI tools like ChatGPT for documentation help.',
+      correct: false,
+      explanation: 'HIPAA violations! Never input PHI into public AI tools. Use HIPAA-compliant, healthcare-specific AI solutions with proper business associate agreements.'
+    },
+    {
+      id: 'q4',
+      type: 'multiple-choice',
+      question: 'Why is data diversity crucial in healthcare AI training?',
+      options: [
+        'To reduce data storage costs',
+        'To make the AI process data faster',
+        'AI trained on homogeneous data may perform poorly or dangerously on underrepresented populations',
+        'To comply with marketing requirements'
+      ],
+      correct: 2,
+      explanation: 'Healthcare AI must perform safely across all patient populations. Lack of diversity in training data can lead to misdiagnosis or harm in underrepresented groups.'
     }
   ]
 };
@@ -704,7 +1497,17 @@ export default function AILiteracyPlatform() {
   };
 
   const LessonView = () => {
-    const content = HR_CONTENT[currentLesson.id];
+    const getContentForCourse = (courseId, lessonId) => {
+      switch(courseId) {
+        case 'hr': return HR_CONTENT[lessonId];
+        case 'insurance': return INSURANCE_CONTENT[lessonId];
+        case 'genai': return GENAI_CONTENT[lessonId];
+        case 'healthcare': return HEALTHCARE_CONTENT[lessonId];
+        default: return null;
+      }
+    };
+
+const content = getContentForCourse(selectedCourse, currentLesson.id);
 
     const handleComplete = () => {
       saveProgress(selectedCourse, currentLesson.id);
@@ -787,8 +1590,20 @@ export default function AILiteracyPlatform() {
     const [score, setScore] = useState(0);
     const [showResults, setShowResults] = useState(false);
 
+    const getQuizForCourse = (courseId) => {
+      switch(courseId) {
+        case 'hr': return QUIZ_1;
+        case 'insurance': return INSURANCE_QUIZ;
+        case 'genai': return GENAI_QUIZ;
+        case 'healthcare': return HEALTHCARE_QUIZ;
+        default: return QUIZ_1;
+      }
+    };
+
+    const quiz = getQuizForCourse(selectedCourse);
+
     const handleAnswer = (answer) => {
-      const question = QUIZ_1.questions[currentQuestion];
+      const question = quiz.questions[currentQuestion];
       let isCorrect = false;
 
       if (question.type === 'multiple-choice') {
@@ -811,7 +1626,7 @@ export default function AILiteracyPlatform() {
       }
 
       setTimeout(() => {
-        if (currentQuestion < QUIZ_1.questions.length - 1) {
+        if (currentQuestion < quiz.questions.length - 1) {
           setCurrentQuestion(currentQuestion + 1);
         } else {
           setShowResults(true);
@@ -819,11 +1634,11 @@ export default function AILiteracyPlatform() {
       }, 1500);
     };
 
-    const question = QUIZ_1.questions[currentQuestion];
+    const question = quiz.questions[currentQuestion];
     const hasAnswered = quizAnswers[question.id];
 
     if (showResults) {
-      const percentage = Math.round((score / QUIZ_1.questions.length) * 100);
+      const percentage = Math.round((score / quiz.questions.length) * 100);
       const passed = percentage >= 70;
 
       return (
@@ -844,7 +1659,7 @@ export default function AILiteracyPlatform() {
             </div>
 
             <p className="text-lg text-gray-600 mb-10">
-              You scored {score} out of {QUIZ_1.questions.length} questions correctly
+              You scored {score} out of {quiz.questions.length} questions correctly
             </p>
 
             {passed ? (
@@ -892,14 +1707,14 @@ export default function AILiteracyPlatform() {
                 Knowledge Check
               </span>
               <span className="text-sm text-gray-500 font-medium">
-                Question {currentQuestion + 1} of {QUIZ_1.questions.length}
+                Question {currentQuestion + 1} of {quiz.questions.length}
               </span>
             </div>
 
             <div className="w-full bg-gray-200 rounded-full h-2 mb-10">
               <div
                 className="bg-gradient-to-r from-violet-600 to-purple-600 h-2 rounded-full transition-all duration-300"
-                style={{ width: `${((currentQuestion + 1) / QUIZ_1.questions.length) * 100}%` }}
+                style={{ width: `${((currentQuestion + 1) / quiz.questions.length) * 100}%` }}
               ></div>
             </div>
 
