@@ -1616,16 +1616,18 @@ const content = getContentForCourse(selectedCourse, currentLesson.id);
         isCorrect = answer.isCorrect;
       }
 
-      setQuizAnswers({
+      const newAnswers = {                           // ← NEW: Store in variable first
         ...quizAnswers,
         [question.id]: { answer, isCorrect }
-      });
+      };
+      setQuizAnswers(newAnswers);                    // ← Use the variable
 
       if (isCorrect) {
         setScore(score + 1);
       }
 
       setTimeout(() => {
+        setQuizAnswers({});                          // ← NEW: Clear answers for next question
         if (currentQuestion < quiz.questions.length - 1) {
           setCurrentQuestion(currentQuestion + 1);
         } else {
