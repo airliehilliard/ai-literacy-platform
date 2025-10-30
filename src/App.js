@@ -1628,9 +1628,9 @@ const content = getContentForCourse(selectedCourse, currentLesson.id);
     };
 
     const handleNext = () => {
-      setQuizAnswers({});
       if (currentQuestion < quiz.questions.length - 1) {
         setCurrentQuestion(currentQuestion + 1);
+        setQuizAnswers({});
       } else {
         setShowResults(true);
       }
