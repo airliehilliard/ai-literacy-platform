@@ -1630,10 +1630,10 @@ const content = getContentForCourse(selectedCourse, currentLesson.id);
     const handleNext = () => {
       if (currentQuestion < quiz.questions.length - 1) {
         setCurrentQuestion(prev => prev + 1);
+        setQuizAnswers({});
       } else {
         setShowResults(true);
       }
-      setQuizAnswers({});
     };
 
     const handlePrevious = () => {
