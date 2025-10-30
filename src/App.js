@@ -1628,18 +1628,18 @@ const content = getContentForCourse(selectedCourse, currentLesson.id);
     };
 
     const handleNext = () => {
-      setQuizAnswers({});
+      setQuizAnswers({});  // Clear answers FIRST
       if (currentQuestion < quiz.questions.length - 1) {
-        setCurrentQuestion(prev => prev + 1);
+        setCurrentQuestion(prev => prev + 1);  // Then move to next question
       } else {
         setShowResults(true);
       }
     };
 
     const handlePrevious = () => {
-      setQuizAnswers({});
+      setQuizAnswers({});  // Clear answers FIRST
       if (currentQuestion > 0) {
-        setCurrentQuestion(prev => prev - 1);
+        setCurrentQuestion(prev => prev - 1);  // Then move to previous question
       }
     };
 
