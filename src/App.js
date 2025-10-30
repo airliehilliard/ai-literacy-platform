@@ -1616,24 +1616,29 @@ const content = getContentForCourse(selectedCourse, currentLesson.id);
         isCorrect = answer.isCorrect;
       }
 
-      const newAnswers = {                           // ← NEW: Store in variable first
+      const newAnswers = {
         ...quizAnswers,
         [question.id]: { answer, isCorrect }
       };
-      setQuizAnswers(newAnswers);                    // ← Use the variable
+      setQuizAnswers(newAnswers);
 
       if (isCorrect) {
         setScore(score + 1);
       }
+    };
 
-      setTimeout(() => {
-        setQuizAnswers({});                          // ← NEW: Clear answers for next question
-        if (currentQuestion < quiz.questions.length - 1) {
-          setCurrentQuestion(currentQuestion + 1);
-        } else {
-          setShowResults(true);
-        }
-      }, 1500);
+    const handleNext = () => {
+      setQuizAnswers({});
+      if (currentQuestion < quiz.questions.length - 1) {
+        setCurrentQuestion(currentQuestion + 1);
+      } else {
+        setShowResults(true);
+      }
+    };
+
+    const handlePrevious = () => {
+      setQuizAnswers({});
+      setCurrentQuestion(currentQuestion - 1);
     };
 
     const question = quiz.questions[currentQuestion];
@@ -1811,6 +1816,36 @@ const content = getContentForCourse(selectedCourse, currentLesson.id);
                 <p className="text-gray-700">{question.explanation}</p>
               </div>
             )}
+
+            <div className="mt-10 pt-8 border-t border-gray-200 flex justify-between items-center">
+              <button
+                onClick={handlePrevious}
+                disabled={currentQuestion === 0}
+                className={`flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all ${
+                  currentQuestion === 0
+                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                }`}
+              >
+                <ArrowLeft className="w-5 h-5" />
+                Previous
+              </button>
+
+              <button
+                onClick={handleNext}
+                disabled={!hasAnswered}
+                className={`flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all ${
+                  !hasAnswered
+                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                    : currentQuestion === quiz.questions.length - 1
+                    ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white hover:shadow-lg'
+                    : 'bg-gradient-to-r from-violet-600 to-purple-600 text-white hover:shadow-lg'
+                }`}
+              >
+                {currentQuestion === quiz.questions.length - 1 ? 'Finish Quiz' : 'Next Question'}
+                <ArrowRight className="w-5 h-5" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
