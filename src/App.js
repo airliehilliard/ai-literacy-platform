@@ -1629,16 +1629,18 @@ const content = getContentForCourse(selectedCourse, currentLesson.id);
 
     const handleNext = () => {
       if (currentQuestion < quiz.questions.length - 1) {
-        setCurrentQuestion(currentQuestion + 1);
-        setQuizAnswers({});
+        setCurrentQuestion(prev => prev + 1);
       } else {
         setShowResults(true);
       }
+      setQuizAnswers({});
     };
 
     const handlePrevious = () => {
+      if (currentQuestion > 0) {
+        setCurrentQuestion(prev => prev - 1);
+      }
       setQuizAnswers({});
-      setCurrentQuestion(currentQuestion - 1);
     };
 
     const question = quiz.questions[currentQuestion];
