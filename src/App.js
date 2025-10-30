@@ -1628,19 +1628,19 @@ const content = getContentForCourse(selectedCourse, currentLesson.id);
     };
 
     const handleNext = () => {
+      setQuizAnswers({});
       if (currentQuestion < quiz.questions.length - 1) {
         setCurrentQuestion(prev => prev + 1);
-        setQuizAnswers({});
       } else {
         setShowResults(true);
       }
     };
 
     const handlePrevious = () => {
+      setQuizAnswers({});
       if (currentQuestion > 0) {
         setCurrentQuestion(prev => prev - 1);
       }
-      setQuizAnswers({});
     };
 
     const question = quiz.questions[currentQuestion];
