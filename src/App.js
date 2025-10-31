@@ -1163,20 +1163,36 @@ const MatchingExercise = ({ question, onAnswer, hasAnswered }) => {
 };
 
 export default function AILiteracyPlatform() {
-  const [currentView, setCurrentView] = useState('home');
+  const [currentView, setCurrentView] = useState('login');
   const [selectedCourse, setSelectedCourse] = useState(null);
   const [currentLesson, setCurrentLesson] = useState(null);
   const [progress, setProgress] = useState({});
   const [quizAnswers, setQuizAnswers] = useState({});
+  const [currentUser, setCurrentUser] = useState(null);
+  const [loginForm, setLoginForm] = useState({ username: '', password: '' });
+  const [isRegistering, setIsRegistering] = useState(false);
 
   useEffect(() => {
-    const saved = localStorage.getItem('aiLiteracyProgress');
-    if (saved) {
-      setProgress(JSON.parse(saved));
+    const savedUser = localStorage.getItem('currentUser');
+    if (savedUser) {
+      const user = JSON.parse(savedUser);
+      setCurrentUser(user);
+      loadUserProgress(user.username);
+      setCurrentView('home');
     }
   }, []);
 
+  const loadUserProgress = (username) => {
+    const saved = localStorage.getItem(`aiLiteracyProgress_${username}`);
+    if (saved) {
+      setProgress(JSON.parse(saved));
+    } else {
+      setProgress({});
+    }
+  };
+
   const saveProgress = (courseId, lessonId) => {
+    if (!currentUser) return;
     const newProgress = {
       ...progress,
       [courseId]: {
@@ -1185,7 +1201,40 @@ export default function AILiteracyPlatform() {
       }
     };
     setProgress(newProgress);
-    localStorage.setItem('aiLiteracyProgress', JSON.stringify(newProgress));
+    localStorage.setItem(`aiLiteracyProgress_${currentUser.username}`, JSON.stringify(newProgress));
+  };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const users = JSON.parse(localStorage.getItem('aiLiteracyUsers') || '{}');
+
+    if (isRegistering) {
+      if (users[loginForm.username]) {
+        alert('Username already exists');
+        return;
+      }
+      users[loginForm.username] = { password: loginForm.password };
+      localStorage.setItem('aiLiteracyUsers', JSON.stringify(users));
+    } else {
+      if (!users[loginForm.username] || users[loginForm.username].password !== loginForm.password) {
+        alert('Invalid username or password');
+        return;
+      }
+    }
+
+    const user = { username: loginForm.username };
+    setCurrentUser(user);
+    localStorage.setItem('currentUser', JSON.stringify(user));
+    loadUserProgress(loginForm.username);
+    setCurrentView('home');
+    setLoginForm({ username: '', password: '' });
+  };
+
+  const handleLogout = () => {
+    setCurrentUser(null);
+    localStorage.removeItem('currentUser');
+    setProgress({});
+    setCurrentView('login');
   };
 
   const isLessonUnlocked = (courseId, sectionIdx, lessonIdx) => {
